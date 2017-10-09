@@ -108,14 +108,14 @@ _You are now finished with the AWS management console. Hereon you will interact 
 
 `sudo nohup wget https://raw.githubusercontent.com/70F/edx.ginkgo.1/master/install.sh -O - | bash > install.out &`
 
-You can read more about the `nohub` directive here: https://en.wikipedia.org/wiki/Nohup. As relates to this usage, the combination of the `nohup` directly along with the ampersand at the end of the line will cause the script to launch on a thread that is separate from the one that is managing your terminal connection. Thus, when you logout of the server (or if the connection is inadvertently broken) then the script will continue to run until completion.
+You can read more about the `nohub` directive here: https://en.wikipedia.org/wiki/Nohup. As relates to this usage, the combination of the `nohup` directive along with the ampersand at the end of the line will cause the script to launch on a new thread. That is, it will not execute on the thread that is managing your terminal connection. Thus, when you logout of the server (or if the connection is inadvertently broken) then the script will continue to run until completion.
 
 I suggest using up to three additional terminal windows to monitor progress of the script.
 1. the linux `top` command is similar to Windows and OSX's "System Activities" or "System Monitor" windows. The server cpu usage will remain steady at around 50% cumulative usage while the script is running.
 2. the command `sudo /edx/bin/supervisorctl status` will print the Open edX processes that are currently running. You'll see this list grow as the script progresses
 3. using `ls` to explore the children folders of /edx/ will at a minimum be informative.
 
-_Editorial Note: I am Linux neophyte at best, and I hope your newfound knowledge of such fact brings you hope._
+_Editorial Note: I am a Linux neophyte at best, and I hope your newfound knowledge of such fact brings you hope._
 
 ### III. Verify that the script worked
 Once the script is complete you should be able to open the landing pages for both the LMS and the CMS. See below for additional information about the many port assignments and URL oddities of Open edX. More immediately, the landing pages for the LMS and CMS should look like the following:
