@@ -10,9 +10,9 @@ This is a step-by-step fully automated script to stand up a single-server full-s
 7. Discussion Forum
 8. XQueue and RabbitMQ (to enable asynchronous multi-tasking such as automatic computer source code graders)
 
-The Open edX platform leverages a plethora of technologies, and this tends to be a formidable stumbling block for all of us, initially at least. For what it's worth, I know a lot about a few of Open edX's technologies, and almost nothing about everything else. Unlike the official documentation, this page attempts to assume as little as possible. Hopefully it helps!
+The Open edX platform leverages a plethora of technologies, and this tends to be a formidable stumbling block for all of us, initially at least. For what it's worth, I know a lot about a few of Open edX's technologies, and almost nothing about everything else. Unlike the official documentation, this page attempts to assume as little as possible. Hopefully it helps. Good luck!
 
-Good luck!
+**Contributors are welcome. My contact information is on my web site.**
 
 Lawrence McDaniel | https://lawrencemcdaniel.com
 
