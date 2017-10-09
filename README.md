@@ -237,7 +237,7 @@ The complete platform creates a labyrinth of folders within /edx. However, a sho
 
 
 ### Words of Advice
-The installation scripts are based nearly entirely on Ansible playbooks and bash scripts. In both cases the Open edX devops team pushes the envelope on what these technologies can do. As impressive as this is from a technology professional's perspective, it's daunting to wrap your head around what this code does at ground level. I leave you with two suggestions:
+The installation scripts are based nearly entirely on Ansible playbooks and bash scripts. In both cases the Open edX devops team pushes the envelope on what these technologies can do. As impressive as this is from a technology professional's perspective, it's daunting to wrap your head around what this code does at ground level. I leave you with a few suggestions:
 1. Build your pristine AMI from a named release. This script is pre-initialized to open-release/ginkgo.1. Using a named release as a base will make online documentation more relevant, and accurate, which might make the difference between you understanding what you've just installed (or not).
 2. Review the scripts before executing. This install script calls four bash scripts written by Ned. To avoid future brain damage, invest the time necessary to get acquainted with what his scripts do.
 3. Avoid modifying the code base. I understand that this is the beauty of open source programming, but, a) it's not necessary, and b) this platform is a beast: you're inviting misery upon yourself if you tinker.
