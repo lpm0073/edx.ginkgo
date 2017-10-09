@@ -243,7 +243,7 @@ The installation scripts are based nearly entirely on Ansible playbooks and bash
 3. Avoid modifying the code base. I understand that this is the beauty of open source programming, but, a) it's not necessary, and b) this platform is a beast: you're inviting misery upon yourself if you tinker.
 4. Kubernetes. If you intend to create your own Open edX environment, for your institution's purposes, then it's unlikely that Kubernetes will figure into your devops strategy. However, here's a great starting point in the event that you want to dig deeper into the topic: https://www.appsembler.com/blog/open-edx-at-scale-using-kubernetes/. Keep in mind that Kubernetes are **experimental** with Open edX.
 
-While the playbooks are challenging to read and understand, I can vouch that they all work as intended; at least, during the initial installation. Future admin activities to fire-up, shut-down, upgrade, downgrade the various subsystems also depend on use of these playbooks, so, do not attempt to circumvent using these or you will regret it.
+While the playbooks are challenging to read and understand, I can vouch that they all work as intended; at least, during the initial installation. Future admin activities to fire-up, shut-down, upgrade, and downgrade the various subsystems also depend on the use of these playbooks. So, do not attempt to circumvent using these or you will regret it.
 
 
 
