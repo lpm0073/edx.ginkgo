@@ -106,7 +106,15 @@ _You are now finished with the AWS management console. Hereon you will interact 
 
 **The script takes around 2 hours to run and is intended to be spawned on a background process as follows:**
 
-`sudo nohup wget https://raw.githubusercontent.com/70F/edx.ginkgo.1/master/install.sh -O - | bash > install.out &`
+`sudo locale-gen en_US en_US.UTF-8
+sudo dpkg-reconfigure locales
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo reboot
+sudo wget https://raw.githubusercontent.com/lpm0073/edx.ginkgo/master/install.sh
+
+sudo nohup bash install.sh &`
 
 You can read more about the `nohub` directive here: https://en.wikipedia.org/wiki/Nohup. As relates to this usage, the combination of the `nohup` directive along with the ampersand at the end of the line will cause the script to launch on a new thread. That is, it will not execute on the thread that is managing your terminal connection. Thus, when you logout of the server (or if the connection is inadvertently broken) then the script will continue to run until completion.
 

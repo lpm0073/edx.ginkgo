@@ -11,11 +11,6 @@
 # nohup.
 
 
-# Ensure your instance is upgraded to the latest Xenial
-sudo apt-get update -y
-sudo apt-get upgrade -y
-#reboot
-
 cd ~
 
 # 1. Set the OPENEDX_RELEASE variable:
