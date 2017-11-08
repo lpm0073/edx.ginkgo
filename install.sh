@@ -13,8 +13,18 @@
 
 cd ~
 
+# Prerequisites: ensure that locales are set on your server. if not the ansible boostrap script below will break.
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+sudo dpkg-reconfigure locales
+
+
 # 1. Set the OPENEDX_RELEASE variable:
-export OPENEDX_RELEASE=open-release/ginkgo.1
+#export OPENEDX_RELEASE=open-release/ginkgo.1
+# Note: there are several small but really important bug fixes since the ginkgo.1 named release. i'm setting the releast to master (ie the most recent stable release) for the time being.
+export OPENEDX_RELEASE=open-release/master
+
+
 
 # 2. Bootstrap the Ansible installation:
 wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo bash
