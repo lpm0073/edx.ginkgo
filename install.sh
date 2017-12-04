@@ -1,3 +1,4 @@
+#!/bin/sh
 # Native Open edX Ubuntu 16.04 64 bit Installation
 # McDaniel
 # October 2017
