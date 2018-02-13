@@ -12,7 +12,7 @@ This is a step-by-step fully automated script to stand up a single-server full-s
 
 The Open edX platform leverages a plethora of technologies, and this tends to be a formidable stumbling block for all of us, initially at least. For what it's worth, I know a lot about a few of Open edX's technologies, and almost nothing about everything else. Unlike the official documentation, this page attempts to assume as little as possible. Hopefully it helps. Good luck!
 
-Detailed instructions are available in this blog article, "https://blog.lawrencemcdaniel.com/open-edx-installation/"
+Detailed instructions are now located in this blog article, [Open edX Step-By-Step Production Installation Guide](https://blog.lawrencemcdaniel.com/open-edx-installation/)
 
 **Contributors are welcome. My contact information is on my web site.**
 
