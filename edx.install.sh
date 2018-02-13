@@ -12,32 +12,12 @@
 # nohup.
 
 
+# ensure we're in the home directory
 cd ~
 
 # Prerequisites: ensure that locales are set on your server. if not the ansible boostrap script below will break.
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
-
-# Delve into these settings only if you are installing a lanuage other than English
-#sudo locale-gen es_ES es_ES.UTF-8
-#sudo dpkg-reconfigure locales#sudo dpkg-reconfigure locales
-
-#export LANG=es_ES.UTF-8
-#export LC_ALL="es_ES.UTF-8"
-#export LC_CTYPE="es_ES.UTF-8"
-
-#export LC_CTYPE=?~@~]es_ES.UTF-8?~@~]
-#export LC_NUMERIC=?~@~]es_ES.UTF-8?~@~]
-#export LC_TIME=?~@~]es_ES.UTF-8?~@~]
-#export LC_COLLATE=?~@~]es_ES.UTF-8?~@~]
-#export LC_MONETARY=?~@~]es_ES.UTF-8?~@~]
-#export LC_MESSAGES=?~@~]es_ES.UTF-8?~@~]
-#export LC_PAPER=?~@~]es_ES.UTF-8?~@~]
-#export LC_NAME=?~@~]es_ES.UTF-8?~@~]
-#export LC_ADDRESS=?~@~]es_ES.UTF-8?~@~]
-#export LC_TELEPHONE=?~@~]es_ES.UTF-8?~@~]
-#export LC_MEASUREMENT=?~@~]es_ES.UTF-8?~@~]
-#export LC_IDENTIFICATION=?~@~]es_ES.UTF-8?~@~]
 
 
 # 1. Set the OPENEDX_RELEASE variable:
@@ -45,13 +25,18 @@ export LC_CTYPE="en_US.UTF-8"
 # Note: there are several small but really important bug fixes since the ginkgo.1 named release. i'm setting the releast to master (ie the most recent stable release) for the time being.
 export OPENEDX_RELEASE=open-release/ginkgo.2
 
-
-
 # 2. Bootstrap the Ansible installation:
 wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo bash
 
 # 3. (Optional) If this is a new installation, randomize the passwords:
-#wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/generate-passwords.sh -O - | bash
+wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/generate-passwords.sh -O - | bash
+
+
+# look for a server-vars.yml file in the home directory
+if [[ -f server-vars.yml ]]; then
+  echo "found server-vars.yml. Copying to /edx/app/edx_ansible/server-vars.yml";
+  sudo cp server-vars.yml /edx/app/edx_ansible/server-vars.yml
+fi
 
 # 4. Install Open edX:
-wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/sandbox.sh -O - | bash > install.out
+wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/sandbox.sh -O - | bash > edx.install.out
